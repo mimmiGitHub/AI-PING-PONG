@@ -22,10 +22,16 @@ var ball = {
 }
 
 function setup(){
-  var canvas =  createCanvas(700,600);
+canvas =  createCanvas(700,600);
+canvas.parent('canvas');
+video=createCapture(VIDEO);
+video.hide();
+video.size(700,600);
+objectDetector=ml5.objectDetector('cocossd',modelLoaded);
 }
-
-
+function modelLoaded(){
+  console.log("Model Loaded");
+}
 function draw(){
 
  background(0); 
