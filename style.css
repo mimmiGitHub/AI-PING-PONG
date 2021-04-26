@@ -13,6 +13,15 @@ body{
 .heading h3{
     display:inline;
 }
-#start ,#game_status{
+#start,#restart,#game_status{
     font-size: 22px;
+}
+.footer_div{
+    position: fixed;
+    width: 100%;
+    line-height: 3;
+    bottom: 0;
+    background-color:black;
+    color:white;
+    text-align: center;
 }
