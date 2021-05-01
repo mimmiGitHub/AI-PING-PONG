@@ -27,10 +27,24 @@ canvas.parent('canvas');
 video=createCapture(VIDEO);
 video.hide();
 video.size(700,600);
-objectDetector=ml5.objectDetector('cocossd',modelLoaded);
+poseNet=ml5.poseNet(video, modelLoaded);
+	poseNet.on('pose',gotPoses);
 }
 function modelLoaded(){
   console.log("Model Loaded");
+}
+noseX="";
+noseY="";
+score="";
+function gotPoses(results){
+  if(length.results > 0){
+    console.log(results);
+    noseX=results[0].pose.nose.x;
+    noseY=results[0].pose.nose.y;
+    console.log("nose X="+noseX+"nose Y="+noseY);
+    score="Start";
+    document.getElementById("status").innerHTML="Game Is Loading";
+  }
 }
 function draw(){
 
