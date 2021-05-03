@@ -46,9 +46,14 @@ function gotPoses(results){
     document.getElementById("status").innerHTML="Game Is Loading";
   }
 }
+function start(){
+  gameStatus="start";
+  document.getElementById("status").innerHTML="Game is Loading";
+}
 function draw(){
+  if(status=="start"){
 
- background(0); 
+  background(0); 
 
  fill("black");
  stroke("black");
@@ -85,6 +90,8 @@ function draw(){
    
    //function move call which in very important
     move();
+  }
+ 
 }
 
 
